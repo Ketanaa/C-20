@@ -25,7 +25,7 @@ function setup() {
   createCanvas(800,400);
 
   astronaut=createSprite(400, 200, 50, 50);
-  astronaut.addAnimation("walking",move);
+  astronaut.addAnimation("brushing");
   astronaut.scale=0.1;
 }
 
@@ -45,7 +45,7 @@ function draw() {
   if(keyDown("UP_ARROW")) {
     astronaut.addAnimation("brushing",brush);
     astronaut.changeAnimation("brushing");
-    astronaut.y=350;
+    astronaut.y=200;
     astronaut.velocity.X = 0;
     astronaut.velocity.Y = 0;
   }
@@ -53,7 +53,7 @@ function draw() {
   if(keyDown("DOWN_ARROW")) {
     astronaut.addAnimation("gymming",gym);
     astronaut.changeAnimation("gymming");
-    astronaut.y=350;
+    astronaut.y=200;
     astronaut.velocity.X = 0;
     astronaut.velocity.Y = 0;
   }
@@ -61,7 +61,7 @@ function draw() {
   if(keyDown("LEFT_ARROW")) {
     astronaut.addAnimation("bathing",bath);
     astronaut.changeAnimation("bathing");
-    astronaut.y=350;
+    astronaut.y=200;
     astronaut.velocity.X = 0;
     astronaut.velocity.Y = 0;
   }
@@ -69,14 +69,15 @@ function draw() {
   if(keyDown("RIGHT_ARROW")) {
     astronaut.addAnimation("eating",eat);
     astronaut.changeAnimation("eating");
-    astronaut.y=350;
+    astronaut.y=200;
     astronaut.velocity.X = 0;
     astronaut.velocity.Y = 0;
   }
 
   if(keyDown("m")) {
-    astronaut.changeAnimation("walking");
-    astronaut.y=350;
+    astronaut.addAnimation("walking",move);
+    astronaut.changeAnimation("walking")
+    astronaut.y=200;
     astronaut.velocity.X = -5;
     astronaut.velocity.Y = 5;
   }
